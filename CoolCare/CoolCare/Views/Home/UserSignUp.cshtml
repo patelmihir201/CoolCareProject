@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "UserSignUp";
+    Layout = "~/Views/Shared/FormLayout.cshtml";
+
+}
+@{
+    Html.RenderPartial("~/Views/Shared/HeaderPartialView.cshtml");
+}
+
+
+<link href="~/Content/CoolCare/css/UserSignUp.css" rel="stylesheet" />
+
+<div class="container">
+    <form class="row needs-validation mt-5 formUserSignUp" novalidate>
+        <h1 align="center">SignUp Form</h1>
+        <div class="col-md-12 col-lg-12 mt-1">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" oninput="validate(this)" class="form-control" id="validationCustom01" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide First Name.
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 mt-3">
+            <label for="validationCustom02" class="form-label">Last name</label>
+            <input type="text" oninput="validate(this)" class="form-control" id="validationCustom02" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide Last Name.
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 mt-3">
+            <label for="validationCustom03" class="form-label">Address</label>
+            <input type="text" oninput="validate(this)" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Please provide a valid Address.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom02" class="form-label">Mobile No.</label>
+            <input type="tel" oninput="validate(this)" class="form-control" id="validationCustom02"
+                   onkeydown="return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key))"
+                   required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Number.
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom02" class="form-label">Email</label>
+            <input type="Email" class="form-control" id="validationCustom02" oninput="validate(this)" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a valid Email.
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 mt-3">
+            <label for="validationCustom03" class="form-label">Password</label>
+            <input type="password" oninput="validate(this)" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">
+                Please provide a valid Password.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-lg-6 mt-3">
+            <label for="validationCustom05" class="form-label">Confirm Password</label>
+            <input type="password" oninput="validate(this)" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">
+                Please provide a valid Confirm Password.
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <!-- <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div> -->
+        <div class="col-12 text-center mt-4">
+            <button class="btn btn-primary px-3 py-2 submitButton" type="submit">SignUp</button>
+        </div>
+        <div class="text-center mt-4">
+            <p><small class="text-white mr-2">If you have Existing Account ?</small> <a href="/Home/UserLogin" class="text-white font-weight-bold">Login Here</a></p>
+        </div>
+    </form>
+</div>
+
+@{
+    Html.RenderPartial("~/Views/Shared/FooterPartialView.cshtml");
+}
